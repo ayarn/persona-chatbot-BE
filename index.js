@@ -9,6 +9,7 @@ app.use(cors({ origin: "*" }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.get("/", (req, res) => res.send("Namo Chats !!"));
 app.use("/api/message", router);
 
 app.listen(PORT, () => {
