@@ -5,7 +5,12 @@ const cors = require("cors");
 const router = require("./routes/message");
 const PORT = process.env.PORT || 5000;
 
-app.use(cors({ origin: "*" }));
+var corsOptions = {
+  origin: "*",
+  allowedHeaders: ["Content-Type", "Authorization", "public-request"],
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
